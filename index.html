@@ -385,12 +385,12 @@ footer a.cfap{color:var(--mut);font-size:11px;letter-spacing:.04em;cursor:pointe
   <div class="grid g2" style="margin-top:14px">
     <div class="card"><h3 style="margin-top:0">Cenário de BREC/BRESOT · vítimas</h3>
       <div class="vt3" id="vit"></div>
-      <p style="font-size:13.5px;color:var(--mut);margin-bottom:0">As 10 vítimas vivas são representadas por atores e atrizes distintos do grupo de 25 moradores isolados. No cenário há também 1 animal a ser resgatado; ao todo, o exercício envolve 5 animais, em situações distintas (quadro abaixo).</p></div>
+      <p style="font-size:13.5px;color:var(--mut);margin-bottom:0">As 10 vítimas vivas são representadas por atores e atrizes distintos do grupo de 25 moradores isolados. No cenário há também 1 animal em estado grave; ao todo, o exercício envolve 4 animais, em situações distintas (quadro abaixo).</p></div>
     <div class="card" id="popCard"><h3 style="margin-top:0">População: evacuação, isolamento e acolhimento</h3><div id="pop"></div></div>
   </div>
   <h3>Personagens fictícios da narrativa</h3>
   <div class="card"><div class="grid g3" id="pers" style="gap:0 24px"></div></div>
-  <h3>Os 5 animais do exercício</h3>
+  <h3>Os 4 animais do exercício <small style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--mut)">(proposta do GRETA-RJ)</small></h3>
   <div class="card" id="animCard"><div class="grid g2" id="anim" style="gap:0 24px"></div></div>
   <h3>Estímulos do cenário</h3>
   <div class="card"><div class="grid g2" id="estim" style="gap:0 24px"></div></div>
@@ -528,7 +528,7 @@ const ATALHOS = {cenario:'Escalada NM 3 → 4 → 5, NR 3 estadual, vítimas e i
  instituicoes:'Atuação de cada instituição, agências municipais e estruturas.',matriz:'Atividades × Responsabilidades (RP, R, A).',
  fluxos:'Alerta, acolhimento, comando, vítimas, animais, desaparecidos e voluntários.',pendencias:'Próximas definições, segurança, avaliação e reuniões de planejamento.'};
 const KPIS = [['7h30–12h30','duração prevista, com STARTEX às 8h15'],['20','etapas no roteiro (0 a 19)'],['10','vítimas vivas: 4 verdes, 4 amarelas, 2 vermelhas'],['5','óbitos simulados (ferramenta DVI)'],
- ['25','moradores isolados e acolhidos (atores)'],['5','animais (manequins), em situações distintas'],['NM 2→5 · NR 0→3','monitoramento e resposta estadual'],['8','eixos de avaliação']];
+ ['25','moradores isolados e acolhidos (atores)'],['4','animais (manequins), em situações distintas'],['NM 2→5 · NR 0→3','monitoramento e resposta estadual'],['8','eixos de avaliação']];
 const OBJS = ['Monitoramento e classificação do risco pelo CEMADEN-RJ e pela SEMPDEC, com panorama e painel integrado da FE-SEDEC/NI²AD no RDMO.',
  'Avisos e mobilização sonora pelo SRAAS, com o EAA portátil da GridLab e decisão do gestor municipal.',
  'Evacuação preventiva com NUPDECs e Defesa Civil municipal e representação do Defesa Civil Alerta, sem disparo real.',
@@ -551,7 +551,7 @@ const ENTES = [['Município de Petrópolis','SEMPDEC e secretarias municipais, C
 // Construção do roteiro a muitas mãos
 const ETAPAS = [['18/11','Reunião com as agências',true],['','Consolidação das contribuições',true],['22/11','Roteiro revisado',true],['','Ensaio geral',false],['08/12','Simulado',false]];
 const PERG = ['Sua atribuição no roteiro está correta e completa?','Os horários e injects são viáveis para sua equipe?','Os recursos indicados estarão disponíveis em 08/12?','Há riscos ou lacunas que o roteiro não prevê?','Quem será o ponto focal da agência no simulado?'];
-const VIT = [['4','verdes','#16A34A'],['4','amarelas','#D4A106'],['2','vermelhas','#DC2626'],['5','óbitos simulados','#3A3A3A'],['5','animais','#8B5A2B']];
+const VIT = [['4','verdes','#16A34A'],['4','amarelas','#D4A106'],['2','vermelhas','#DC2626'],['5','óbitos simulados','#3A3A3A'],['4','animais','#8B5A2B']];
 const POP = [['🏃','Evacuação preventiva (item 4)','Os NUPDECs e a equipe da Defesa Civil orientam e conduzem os moradores; 10 deixam a área de risco rumo ao ponto de apoio.'],
  ['🚧','25 moradores isolados (item 6)','Após o deslizamento, vias bloqueadas impedem a saída de 25 moradores, grupo distinto das 10 vítimas do cenário.'],
  ['🦺','Isolamento com o Processo APELL (item 9)','Voluntários do APELL orientam a população, representada por 10 atores, a permanecer na zona fria.'],
@@ -560,12 +560,11 @@ const ESTIM = [['📢','Abertura e aviso de simulado (STARTEX)','08h15 · item 0
  ['🌧','Inject sonoro nº 1 (chuva)','09h10 · item 5'],['📱','Representação do DCA e Gabinete de Gestão de Crise','09h15 · item 5'],['⛰','Inject sonoro nº 2 (deslizamento) e pedidos de ajuda','09h25 · item 6'],
  ['🚧','25 moradores isolados por vias bloqueadas','09h25 · item 6'],['❓','Familiar procura um desaparecido','item 12'],['⚡','Perda de energia e conectividade','10h50 · item 14'],
  ['🙋','Chegada de voluntários espontâneos','11h20 · item 16'],['📲','Boato no WhatsApp sobre novo deslizamento','sugestão 11h25 · item 16'],['🚁','Vias bloqueadas e apoio aéreo','11h30 · item 17'],['🏁','ENDEX · fim do exercício','12h00 · item 19']];
-// Os 5 animais do exercício  [ícone, situação, descrição, item]
-const ANIM = [['⛰','Animal no cenário de BREC/BRESOT','A cadela Pipoca, no cenário do deslizamento, precisa ser resgatada pelas equipes.',12],
- ['🏠','Morador que não sai sem o animal','Durante a evacuação, uma pessoa se recusa a deixar a casa sem o seu animal.',4],
- ['⛓','Cachorro esquecido acorrentado','Animal deixado para trás em uma casa da área evacuada, a ser localizado e resgatado.',12],
- ['🌿','Animal silvestre','Encontrado na área atingida; exige manejo específico.',12],
- ['🐾','Quinta situação','Em definição pela coordenação.',null]];
+// Os 4 animais do exercício (proposta do GRETA-RJ, 25/11)  [ícone, situação, descrição, item]
+const ANIM = [['🏠','Morador que não sai sem o animal','Na evacuação, a Defesa Civil identifica um morador que resiste a sair sem o animal e aciona o GRETA-RJ. Dois integrantes conversam com ele; como o abrigo de pessoas não recebe animais, o morador só sai com a equipe presente. Ele vai para o abrigo de pessoas; o animal vai ao posto de triagem (avaliação e registro) e depois ao abrigo temporário de animais.',4],
+ ['⛓','Cachorro esquecido acorrentado','Alguém avisa que um morador saiu e deixou o animal preso na corrente, e informa onde fica a casa. A equipe vai ao local e retira o animal, que segue para triagem e registro e depois para o abrigo temporário de animais.',4],
+ ['🌿','Animal silvestre','Recolhido no retorno das equipes e levado ao posto de triagem, onde é avaliado pelo veterinário e registrado. Depois, o posto de comando, a Secretaria de Proteção Animal ou a Cobea aciona o INEA para buscar o animal.',4],
+ ['⛰','Animal em estado grave no cenário (vítima vermelha)','A cadela Pipoca, no cenário do deslizamento, com hemorragia massiva e choque. Após a liberação da zona quente pelo CBMERJ, dois integrantes fazem o torniquete; na zona morna, o animal vai para a prancha e segue à zona fria, onde a Cobea faz o atendimento veterinário, com soroterapia. A prancha volta à zona morna.',12]];
 // Personagens fictícios da narrativa do roteiro
 const PERS = [['Dona Lurdes, 72 anos','Moradora de uma encosta; vive com o neto Davi, de 9 anos'],['Seu Geraldo','Vizinho de Dona Lurdes; fica preso no deslizamento com a cadela Pipoca'],
  ['Júlia','Meteorologista do CEMADEN-RJ'],['Carla','Plantonista da Defesa Civil de Petrópolis (SEMPDEC)'],['Capitão Rafael','Analista do NI²AD, da Força Especial da SEDEC'],
@@ -644,7 +643,7 @@ const ST = [
   narr:'Às 9h00, a SEMPDEC decide mobilizar a comunidade e executa os procedimentos do estágio de ALERTA. A sirene orienta os moradores a deixar a área. Agentes da Defesa Civil, da Guarda Municipal e do núcleo comunitário conduzem a população pelas rotas de fuga. Dona Lurdes, Davi e familiares chegam ao ponto de apoio, onde a Assistência Social registra a família e o Conselho Tutelar verifica a situação das crianças. Ao todo, 10 moradores deixam a área de risco.',
   d:['A decisão é comunicada ao CEMADEN-RJ e à REDEC 7. A GridLab reproduz a mensagem de “Mobilização” no EAA portátil.',
      'Sequência das ações no cenário:<br>1. Evacuação preventiva: logo após a mobilização, os NUPDECs orientam e auxiliam os primeiros moradores na saída da área de risco e no deslocamento ao local seguro ou ao ponto de apoio.<br>2. Reforço das orientações: a equipe operacional da Defesa Civil aborda os moradores que ainda permanecem na área, reforça a necessidade de evacuação e presta auxílio para que também saiam.<br>3. Representação do impacto e início da resposta: após a evacuação preventiva, a gravação de chuva marca a ocorrência simulada do desastre e o início das ações de resposta.',
-     'Situação com animal: um morador se recusa a deixar a casa sem o seu animal. As equipes conduzem a saída conjunta e o acolhimento coordenado, sem separação indevida; o animal segue para o Centro dos Não Humanos.',
+     'Situações com animais (GRETA-RJ): 1) um morador se recusa a deixar a casa sem o seu animal; a Defesa Civil aciona o GRETA-RJ, e dois integrantes conversam com ele até que saia acompanhado da equipe. Ele vai para o abrigo de pessoas; o animal, ao posto de triagem e ao abrigo temporário de animais. 2) Alguém avisa que um cachorro ficou acorrentado em uma casa evacuada; a equipe vai ao local, retira o animal e o leva à triagem. 3) No retorno, a equipe recolhe um animal silvestre e o leva à triagem; depois, o INEA é acionado para buscá-lo.',
      'FE-SEDEC/NI²AD: registra os dados no RDMO e apresenta o Mapa de Risco da CEPEDEC, as áreas afetadas e as medidas adotadas.',
      'Âmbito municipal (estágio de ALERTA – Nível 4 do Protocolo Operacional). Com o toque de mobilização, a SEMPDEC aciona os protocolos de emergência nos grupos institucionais:<br>• SEMPDEC, Educação e Assistência Social: abertura do ponto de apoio e acolhimento da população (no exercício, a estrutura montada no Parque).<br>• Guarda Civil Municipal, NUDECs, ACS e ACE (Saúde) e voluntários cadastrados: apoio à condução da população pelas rotas de fuga.<br>• Secretaria Municipal de Saúde: mobilização das equipes de saúde.<br>• CPTrans e GCM: organização viária e proteção da área de risco.<br>• Ascom: orientações de mobilização nas redes oficiais e nos grupos das comunidades e dos NUDECs.'],
   f:[['son','SRAAS · Mobilização (mensagem automática)','A Defesa Civil de Petrópolis informa: Há risco de deslizamentos nesta área. Atenção moradores, dirijam-se para locais seguros e pontos de apoio.']],p:['A1', 'A2', 'N1']},
@@ -659,7 +658,7 @@ const ST = [
  {n:6,h:'09h25',t:'Movimento de massa, moradores isolados e NR 3',b:1,q:'Coordenação, CEMADEN-RJ, SEMPDEC, REDEC 7, CESTAD e autoridade estadual',nm:'NM 5',nr:'NR 3',
   narr:'Nem todos conseguem sair a tempo. Seu Geraldo decide esperar a chuva diminuir, assim como outros moradores. O deslizamento atinge edificações: 10 pessoas feridas, 5 vítimas fatais e animais, entre eles a cadela Pipoca, além de moradores presos por vias bloqueadas. Ouvem-se pedidos de ajuda. Júlia eleva a classificação para NM 5 – Extremo. O Secretário municipal convoca o GRAC municipal no Gabinete de Gestão de Crise, com a anuência do Prefeito. No Estado, o CESTAD analisa os indicadores e a autoridade estadual estabelece o Nível de Resposta 3, com a operacionalização do PLANCON estadual.',
   d:['Inject sonoro nº 2 (09h25): áudio de chuva intensa seguido de ruído de movimentação de solo e deslizamento; ouvem-se pedidos de ajuda.',
-     'O cenário de BREC/BRESOT já estará montado, com 10 vítimas vivas (4 verdes, 4 amarelas e 2 vermelhas), 5 óbitos simulados por manequins e 1 animal a ser resgatado. Ao todo, o exercício envolve 5 animais (manequins), em situações distintas.',
+     'O cenário de BREC/BRESOT já estará montado, com 10 vítimas vivas (4 verdes, 4 amarelas e 2 vermelhas), 5 óbitos simulados por manequins e 1 animal em estado grave. Ao todo, o exercício envolve 4 animais (manequins), em situações distintas.',
      'As 25 pessoas isoladas formam um grupo distinto das 10 vítimas vivas, dos 5 óbitos e dos animais do cenário. A coordenação do exercício acompanha a situação desse grupo e simula os encaminhamentos necessários.',
      'CEMADEN-RJ: atualiza a classificação simulada para NM 5 - Extremo, com a confirmação de ocorrências e o agravamento após a mobilização.'],
   f:[['rad','COMPDEC → REDEC 7 (logo após o inject sonoro nº 2)','Atenção, REDEC 7. Após o movimento de massa, as vias de acesso à área ficaram bloqueadas, impedindo a saída de 25 moradores. O grupo está isolado e necessita de avaliação e apoio das equipes de resposta.'],
@@ -701,7 +700,7 @@ const ST = [
  {n:12,h:'10h40',t:'Busca, salvamento, vítimas fatais e familiar à procura de desaparecido',b:2,q:'GOESP, CBRESC, ASE, SAMU, Saúde, PCERJ, CML, proteção animal, Cobea e FE-SEDEC',nm:'NM 5',
   narr:'Às 10h40, começam as buscas. Os cães indicam a localização de Seu Geraldo, que é retirado da zona quente e levado à área de concentração de vítimas para triagem. Pipoca é encaminhada ao Centro dos Não Humanos. As equipes também iniciam o registro das vítimas fatais e o cruzamento com a relação de desaparecidos.',
   d:['Com a chegada das equipes especializadas (GOESP e CBRESC), as equipes localizam e atendem as 2 vítimas vermelhas e os 5 reclamados. A retirada da área quente ocorre pelo Ponto de Extração de Vítimas, e a classificação e a priorização são feitas na Triagem Avançada (ACV), com avaliação pelas equipes de saúde.',
-     'Animais: as equipes resgatam o animal do cenário de BREC/BRESOT e atuam nas demais situações com animais, como o cachorro esquecido acorrentado em casa e o animal silvestre encontrado na área. Os animais são avaliados e encaminhados ao Centro dos Não Humanos (FE-SEDEC); a Cobea apoia a avaliação e a destinação.',
+     'Animal em estado grave (GRETA-RJ): após a liberação da zona quente pelo CBMERJ, dois integrantes do GRETA-RJ entram e fazem o torniquete na cadela Pipoca (hemorragia massiva e choque). Na zona morna, ela vai para a prancha e segue à zona fria, onde a Cobea faz o atendimento veterinário, com soroterapia; a prancha volta à zona morna. A equipe do GRETA-RJ atua em duplas: 2 na zona quente e 4 na zona morna (2 no atendimento e 2 no transporte).',
      'Triagem e transporte das 2 vítimas vermelhas: uma é conduzida pela ASE até o ponto de embarque e segue de aeronave à unidade de referência; a outra é levada pela mesma ASE, em deslocamento subsequente, ao hospital de referência indicado pela Secretaria Municipal de Saúde. O emprego de uma única ASE é intencional: representa a escassez de material e permite avaliar a priorização. O NI²AD atualiza os dados das vítimas e dos danos humanos em mapa temático.',
      'Hospital de campanha: em razão do bloqueio de vias, a COMPDEC solicita a articulação do apoio do Exército Brasileiro. Para o exercício, o hospital já estará montado; a solicitação representa o fluxo de acionamento.',
      'Gestão das vítimas fatais: as cinco vítimas são registradas na ferramenta DVI, com correlação à relação de desaparecidos, preservação do local e controle das informações. Depois, os militares do CML fazem a remoção e o encaminhamento ao IML; o locutor lê breve texto sobre o CML.',
@@ -753,7 +752,7 @@ const GRP = {CENARIO:['Cenário','#8B5A2B'], CBMERJ:['CBMERJ','#C62828'], SAUDE:
  MUNI:['Órgãos municipais de Petrópolis','#7A3FB0'], ONG:['Sociedade civil','#B8860B'], AREA:['Áreas demarcadas','#64748B'], HELI:['Heliponto','#00A3C4']};
 const GC = Object.fromEntries(Object.values(GRP).map(([n,c]) => [n,c]));
 // Correções de texto do croqui para a numeração e as quantidades do roteiro de 22/11
-const MFIX = {Q1:['3 animais','1 animal a ser resgatado (5 animais no exercício, em situações distintas)'], N1:['Destino dos 3 animais resgatados no cenário','Destino dos animais resgatados'],
+const MFIX = {Q1:['3 animais','1 animal em estado grave (4 animais no exercício, em situações distintas)'], N1:['Destino dos 3 animais resgatados no cenário','Destino dos animais resgatados'],
  M6:['(item 18)','(itens 12 e 17)'], A6:['(item 16)','(itens 12 e 16)'], A1:['dos 25 moradores que deixam a área de risco','dos moradores evacuados (item 4) e dos 25 moradores isolados (item 13)']};
 // Instituição (card da tela 6) de cada estrutura
 const E2I = {Q1:'CBM',Q2:'CBM',M1:'CBM',M2:'CBM',M3:'CBM',M4:'SAMU',M5:'SAMU',M6:'GSE',M7:'SAMU',M8:'CBM',M9:'ESP',C1:'CBM',C2:'FE',C3:'CEM',C4:'REDEC',C5:'GRAC',C6:'TEL',C7:'TEL',C8:'FE',
@@ -816,7 +815,7 @@ const INST = [
  {id:'FAB',s:'FAB',n:'Força Aérea Brasileira',c:'#2E86C1',g:'Apoio',p:'Consta no quadro de estruturas do roteiro.',li:['Banheiros químicos de apoio ao público interno']},
  {id:'SES',s:'SES-RJ',n:'Secretaria de Estado de Saúde · SES-RJ e Força Nacional do SUS',c:'#0F8A5F',g:'Apoio',p:'Acompanha a regulação dos feridos e apoia o Vigidesastres municipal.',li:['Regulação e Vigidesastres (S4)','Força Nacional do SUS (Ministério da Saúde), na segunda barraca da SES-RJ (S5)']},
  {id:'PC',s:'PCERJ',n:'Polícia Civil · perícia técnica · IML',c:'#3A3A3A',g:'Apoio',p:'Identificação das cinco vítimas fatais simuladas (DVI) e apoio contra a desinformação.',li:['Registro na ferramenta DVI e correlação com desaparecidos','Recebimento no IML das vítimas removidas pelo CML (Exército)','Avalia medidas legais contra a desinformação, com a Procuradoria']},
- {id:'PA',s:'ANIMAIS',n:'Equipes de proteção animal',c:'#A16207',g:'Apoio',p:'Atuação nas 5 situações com animais do exercício, do resgate no cenário de BREC/BRESOT ao animal silvestre.',li:['Apoio estadual solicitado via GRAC','GRETA-RJ e Cobea Petrópolis: busca, salvamento e primeiros socorros de animais (N2)','CRMV-RJ: fiscalização do exercício profissional veterinário (N3)','Integração com o Centro dos Não Humanos (N1)']},
+ {id:'PA',s:'ANIMAIS',n:'Equipes de proteção animal',c:'#A16207',g:'Apoio',p:'Atuação nas 4 situações com animais do exercício, propostas pelo GRETA-RJ: morador que não sai sem o animal, cachorro acorrentado e animal silvestre (item 4) e animal em estado grave no cenário (item 12).',li:['Apoio estadual solicitado via GRAC','GRETA-RJ em duplas: 2 na zona quente e 4 na zona morna (atendimento e transporte)','Animal silvestre: triagem e registro; o INEA é acionado para buscá-lo','GRETA-RJ e Cobea Petrópolis: busca, salvamento e primeiros socorros de animais (N2)','CRMV-RJ: fiscalização do exercício profissional veterinário (N3)','Integração com o Centro dos Não Humanos (N1)']},
  {id:'CONC',s:'CONC',n:'Concessionárias e redes de apoio',c:'#0E7490',g:'Apoio',p:'Serviços essenciais e redundância de comunicações.',li:['Enel: desenergização da área e restabelecimento da energia','Águas do Imperador: convocada ao Gabinete de Crise','Operadoras de telecomunicações','Elovias (BR-040, trecho de Itaipava): interdições, condições da rodovia e fluxo de viaturas','ROER (radioamadores): repetidora móvel']},
  {id:'GRID',s:'GridLab',n:'GridLab',c:'#155E75',g:'Apoio',p:'Apresenta o EAA portátil e reproduz as mensagens do SRAAS.',li:['“Aviso de Chuva” (item 2)','“Mobilização” (item 4)']},
  {id:'VOL',s:'VOL',n:'Voluntários · Processo APELL, LBV, CVV, AMACOPA e ADRA',c:'#6D28D9',g:'Apoio',p:'Organizações e voluntários que atuam na zona fria, em apoio às equipes.',li:['Processo APELL: isolamento e contenção da população (10 atores) e apoio à triagem e ao transporte das vítimas à ACV e ao hospital de campanha (item 9)','LBV: 3 voluntários, 25 porções de ração fria aos acolhidos (item 13)','CVV: 3 voluntários no acolhimento, com a Secretaria Municipal de Saúde (item 13)','AMACOPA: 3 voluntários no apoio logístico (item 13)','ADRA: distribuição de água e hidratação','UNIVOB: 3 voluntários de apoio ao abrigo, com a assistência social (A11)']},
@@ -846,7 +845,7 @@ const MX = {0:{DIR:'RP',GRID:'A',COMPDEC:'A',CEM:'A',SECMUN:'A',TEL:'R'},
  1:{CEM:'RP',NI2AD:'R',CESTAD:'R',COMPDEC:'R',SECMUN:'A',TEL:'A'},
  2:{CEM:'RP',COMPDEC:'R',GRID:'R',NI2AD:'A',SECMUN:'A',CESTAD:'R',TEL:'A'},
  3:{CEM:'RP',NI2AD:'R',COMPDEC:'A',REDEC:'A',TEL:'A'},
- 4:{COMPDEC:'RP',NUPDEC:'R',GRID:'R',NI2AD:'R',SECMUN:'R',FE:'A',CEM:'A',REDEC:'A',TEL:'A'},
+ 4:{COMPDEC:'RP',NUPDEC:'R',GRID:'R',NI2AD:'R',SECMUN:'R',FE:'A',CEM:'A',REDEC:'A',TEL:'A',PA:'R'},
  5:{COMPDEC:'RP',DIR:'R',NI2AD:'R',CESTAD:'R',CEM:'A',SECMUN:'A',TEL:'A'},
  6:{DIR:'RP',CEM:'R',COMPDEC:'R',CESTAD:'R',REDEC:'R',SECMUN:'A',NI2AD:'A',TEL:'A'},
  7:{COMPDEC:'RP',CBM:'R',NI2AD:'A',DIR:'A',TEL:'A'},
@@ -909,7 +908,7 @@ const FLUX = [['📡','Alerta','#2896E1',['CEMADEN-RJ classifica o NM','Recomend
  ['✝','Vítima fatal','#3A3A3A',['Localização e preservação do local','Registro na ferramenta DVI (PCERJ)','Correlação com desaparecidos','Remoção pelo CML','IML']],
  ['❓','Familiar à procura de desaparecido','#6D28D9',['COMPDEC','Centro de Informações de Desaparecidos','Cruzamento: ponto de apoio, hospital e DVI','Área de Apoio aos Familiares, com a Capelania']],
  ['🙋','Voluntário espontâneo','#B7791F',['Chega ao local','Centro de Recepção e Gestão de Voluntários','Cadastro, triagem e direcionamento','Sem acesso à área quente']],
- ['🐾','Animal','#8B5A2B',['Cenário','Localização e avaliação','Centro dos Não Humanos','Destinação, com a Cobea']],
+ ['🐾','Animal','#8B5A2B',['Residência ou cenário','Resgate pelo GRETA-RJ (no grave: torniquete na zona quente)','Posto de triagem: avaliação e registro','Abrigo temporário de animais, atendimento da Cobea ou INEA (silvestre)']],
  ['📨','Pedido de apoio estadual','#FF6E1F',['Gabinete de Crise delibera','COMPDEC: ofício ou e-mail','REDEC 7','SEDEC-RJ analisa e consulta o GRAC','Devolutiva pela REDEC']],
  ['📲','Desinformação','#475569',['Boato no WhatsApp','Ascom, com dados da SEMPDEC','Nota oficial e boletim consolidado','Procuradoria e Polícia Civil avaliam medidas legais']]];
 
@@ -953,7 +952,7 @@ const IND = [['1 · Monitoramento, alerta e alarme','Tempo entre a recomendaçã
  ['5 · Assistência humanitária e abrigo','Tempo até o ponto de apoio; Ficha de Atendimento Emergencial; transição ao abrigo; desaparecidos, familiares, voluntários e doações.'],
  ['6 · Comunicações','Uso da palavra “EXERCÍCIO”; rádios distribuídos e registrados no briefing das 07h30; tempo entre a perda de sinal e a mudança das equipes para o DMO BM 01; tempo entre a chegada da ERB móvel e a antena elevada; tempo até a primeira chamada de voz e até a internet disponível; retorno dos grupos às pastas de origem; Sirce e ROER; 100% dos rádios devolvidos e conferidos; resposta ao boato. (Lista proposta pelo CSM/MTel.)'],
  ['7 · Gestão da informação (RDMO/NI²AD)','Tempo do flash operacional, da nota técnica e das atualizações do RDMO; registro do NR 3; relatório pós-exercício.'],
- ['8 · Proteção animal','Resgate do animal no cenário; morador que não sai sem o animal; cachorro acorrentado; manejo do animal silvestre; integração do Centro dos Não Humanos com a Cobea.']];
+ ['8 · Proteção animal','Abordagem do morador que não sai sem o animal; resgate do cachorro acorrentado; triagem do animal silvestre e acionamento do INEA; tempo até o torniquete e a chegada do animal grave à Cobea; registro dos 4 animais na triagem.']];
 // "O que é" cada instituição (texto institucional, sem relação com o roteiro)
 const QUE = {
  DIR:'A Secretaria de Estado de Defesa Civil do Rio de Janeiro (SEDEC-RJ) coordena o Sistema Estadual de Proteção e Defesa Civil. A Diretoria-Geral de Defesa Civil (DGDEC) conduz as ações estaduais de proteção e defesa civil, e a Diretoria das REDECs (DREDEC) articula as Coordenadorias Regionais com os municípios.',
